@@ -15,6 +15,8 @@ df = pd.read_excel(book_file)
 users_df = pd.read_csv(user_file,skiprows=[0])
 print(users_df)
 
+df = df[df['Type']=='Regular usage']
+print(len(df))
 
 grouped_df = df.groupby(['User','Resource','Group'])
 grouped_df = grouped_df[["User","Resource","Group","Duration"]]
